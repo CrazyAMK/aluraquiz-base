@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 import db from "../db.json"
+import Head from "../src/components/Head"
 import Widget from "../src/components/Widget"
 import  Footer from "../src/components/Footer"
 import GitHubCorner from "../src/components/GitHubCorner"
 import QuizBackground from "../src/components/QuizBackground"
 import QuizLogo from "../src/components/QuizLogo"
+
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -21,9 +23,11 @@ const QuizContainer = styled.div`
 
 export default function Home() {
   return (
-
+    
     <QuizBackground backgroundImage={db.bg}>
+      <Head faceImage={db.bg} />
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
                 <h1>The legend of zelda</h1>
@@ -42,7 +46,7 @@ export default function Home() {
         <Footer />
 
       </QuizContainer>
-      <GitHubCorner projectUrl="" />
+      <GitHubCorner projectUrl="https://github.com/CrazyAMK/aluraquiz-base" />
     </QuizBackground>
 
   )

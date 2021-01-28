@@ -1,3 +1,4 @@
+import HeadCustom from "../src/components/HeadCustom"
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import db from "../db.json";
 
@@ -29,6 +30,7 @@ const theme = db.theme;
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <HeadCustom faceImage={db.bg} />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />

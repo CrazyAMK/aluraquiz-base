@@ -1,5 +1,7 @@
 {
     "bg": "https://t2.tudocdn.net/531130?w=1200",
+    "gifLoading": "https://aceyourpaper.com/essays/public/images/loader.gif",
+    "favIcon": "https://www.freepngimg.com/download/the_legend_of_zelda/20983-8-zelda-link-photo.png",
     "title": "Quiz CSS da Alura",
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [

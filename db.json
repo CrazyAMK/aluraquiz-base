@@ -1,40 +1,67 @@
 {
-    "bg": "https://t2.tudocdn.net/531130?w=1200",
-    "gifLoading": "https://aceyourpaper.com/essays/public/images/loader.gif",
-    "favIcon": "https://www.freepngimg.com/download/the_legend_of_zelda/20983-8-zelda-link-photo.png",
-    "title": "Quiz CSS da Alura",
+    "bg": "https://www.mundojs.com.br/wp-content/uploads/2019/08/react1.jpg",
+    "gifLoading": "https://media2.giphy.com/media/iFmw13LV1hHhViPPWz/source.gif",
+    "favIcon": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+    "title": "Quiz React",
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [
       {
         "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
-        "answer": 2,
+        "title": "Por que devemos usar o React?",
+        "description": "",
+        "answer": 1,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "O JSX fornece um código fácil de ler porém não de escrever",
+          "O React é facilmente integrável a outras estruturas JavaScript",
+          "O React é dificil de integrar a outras estruturas JavaScript",
+          "DOM real em vez de um DOM virtual"
         ]
       },
       {
         "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
+        "title": "Quais são os estágios da vida útil de um componente?",
+        "description": "",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+          "inicialização , atualizações de estados e destruição",
+          "inicialização , destruição e atualizações de estados",
+          "atualizações de estados , inicialização e destruição",
+          "destruição ,  atualizações de estados, inicialização"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "title": "Os navegadores web podem ler JSX?",
+        "description": "",
+        "answer": 1,
+        "alternatives": [
+          "Sim, qualquer navegador pode ler JSX.",
+          "Não, os navegadores não podem ler JSX.",
+          "Depende, depende de qual navegador é utilizado"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "title": "Como o React JS faz o uso de 'keys'?",
+        "description": "",
+        "answer": 3,
+        "alternatives": [
+          "React usa keys para diferenciar entre elementos DOM reais simples e aqueles que são únicos.",
+          "React usa keys para diferenciar entre elementos DOM reais simples e aqueles que são iguais.",
+          "React usa keys para diferenciar entre elementos DOM virtuais simples e aqueles que são iguais.",
+          "React usa keys para diferenciar entre elementos DOM virtuais simples e aqueles que são únicos."
         ]
       }
     ],
     "external": [
-      ""
+      "https://ff9quiz.vercel.app/",
+      "https://aluraquiz-css.omariosouto.vercel.app/",
+      "https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
     ],
     "theme": {
       "colors": {
-        "primary": "#4caf50",
-        "secondary": "#ffc400",
+        "primary": "#2196f3",
+        "secondary": "#1769aa",
         "mainBg": "#171B35",
         "contrastText": "#FFFFFF",
         "wrong": "#FF5722",

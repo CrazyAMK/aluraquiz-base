@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-import styled from 'styled-components'
 import { useRouter } from "next/router"
-import db from "../db.json"
-import Widget from "../src/components/Widget"
-import Footer from "../src/components/Footer"
-import GitHubCorner from "../src/components/GitHubCorner"
-import QuizBackground from "../src/components/QuizBackground"
-import QuizLogo from "../src/components/QuizLogo"
+// import db from "../../../db.json"
+import Widget from "../../components/Widget"
+import Footer from "../../components/Footer"
+import GitHubCorner from "../../components/GitHubCorner"
+import QuizBackground from "../../components/QuizBackground"
+import QuizLogo from "../../components/QuizLogo"
 
-import Button from '../src/components/Button'
-import QuizContainer from '../src/components/QuizContainer';
-import AlternativesForm from '../src/components/AlternativesForm';
+import Button from '../../components/Button'
+import QuizContainer from '../../components/QuizContainer';
+import AlternativesForm from '../../components/AlternativesForm';
+import BackLinkArrow from '../../components/BackLinkArrow'
 
 
 
@@ -35,6 +35,9 @@ function ResultWidget({results}){
             </Widget.Header>
 
             <Widget.Content>
+
+                { acertos === results.length ? <img src="https://i.pinimg.com/originals/b2/3a/90/b23a908ae01021bc1064937bad061b11.gif" /> : ""}
+
                 <p>
                     Olá {player}, você acertou {acertos} perguntas
                 </p>
@@ -51,7 +54,7 @@ function ResultWidget({results}){
 }
 
 
-function LoadingWidget(){
+function LoadingWidget({db}){
     return (
         <Widget>
             <Widget.Header>
@@ -59,7 +62,9 @@ function LoadingWidget(){
             </Widget.Header>
 
             <Widget.Content>
-                <img style={{maxWidth: "100px", display: "flex" , margin: "auto"}} src={db.gifLoading}/>
+                {
+                   db.gifLoading ? <img style={{maxWidth: "100px", display: "flex" , margin: "auto"}} src={db.gifLoading}/> :  <img style={{maxWidth: "100px", display: "flex" , margin: "auto"}} src="https://thumbs.gfycat.com/BitterEarnestBeardeddragon-small.gif"/> 
+                }
             </Widget.Content>
         </Widget>
     )
@@ -87,7 +92,8 @@ function QuestionWidget({question, questionIndex, totalQuestions, onSubmit, addR
     return(
         <Widget>
             <Widget.Header>
-            <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
+                <BackLinkArrow href="/" />
+                <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
             </Widget.Header>
             <img
                 alt="Descrição"
@@ -136,7 +142,9 @@ const screenStates = {
 }
 
 
-export default function QuizPage(){
+export default function QuizPage({externalDb}){
+    console.log(externalDb)
+    const db = externalDb;
     const [screenState, setScreenState] = useState(screenStates.LOADING);
     const [results, setResults] = useState([]);
     const totalQuestions = db.questions.length;
@@ -180,7 +188,7 @@ export default function QuizPage(){
                     addResult={addResult}
                 />}
 
-                {screenState === screenStates.LOADING && <LoadingWidget />}
+                {screenState === screenStates.LOADING && <LoadingWidget db={db} />}
 
                 {screenState === screenStates.RESULT && <ResultWidget results={results} />}
 

@@ -1,6 +1,8 @@
-
 import { useRouter } from "next/router"
 import { useState } from "react"
+import { motion } from 'framer-motion'
+
+
 import db from "../db.json"
 import Widget from "../src/components/Widget"
 import Footer from "../src/components/Footer"
@@ -11,10 +13,7 @@ import QuizLogo from "../src/components/QuizLogo"
 import Input from "../src/components/Input"
 import Button from '../src/components/Button'
 import QuizContainer from "../src/components/QuizContainer"
-
-
-
-
+import Link from "../src/components/Link"
 
 
 export default function Home() {
@@ -36,9 +35,9 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
-        <Widget>
+        <Widget as={motion.section} variants={{show: {opacity: 1, y: "0"}, hidden: { opacity: 0, y: "100%"}}} initial="hidden" animate="show" transition={{delay: 0, duration : 0.5}}>
           <Widget.Header>
-            <h1>The legend of Zelda</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={sendNameForm}>
@@ -48,13 +47,33 @@ export default function Home() {
           </Widget.Content>
         </Widget>
       
-        <Widget>
+        <Widget  as={motion.section} variants={{show:  {opacity: 1, y: "0"}, hidden: { opacity: 0, y: "100%"}}} initial="hidden" animate="show" transition={{delay: 0.5, duration : 0.5}}>
           <Widget.Content>
-            <h1>Quiz da Galera</h1>
-            <p>Lorem ipsum</p>
+            <h1>Quizes da Galera</h1>
+            <ul>
+              {db.external.map((linkExterno) => {
+                const [projectName, githubUser] = linkExterno.replace(/\//g, '')
+                                      .replace('https:', '')
+                                      .replace('.vercel.app', '')
+                                      .split('.')
+
+                return (
+
+                  <li key={linkExterno}>
+                    <Widget.Topic 
+                      href={`/quiz/${projectName}___${githubUser}`}
+                      as={Link}
+                    >
+                      {githubUser}/{projectName}
+                    </Widget.Topic>
+                  </li>
+                  
+                  );        
+              })}
+            </ul>
           </Widget.Content>
         </Widget>
-        <Footer />
+        <Footer  as={motion.footer} variants={{show: {opacity: 1, y: "0"}, hidden: { opacity: 0, y: "100%"}}} initial="hidden" animate="show" transition={{delay: 1, duration : 0.5}}/>
 
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/CrazyAMK/aluraquiz-base" />

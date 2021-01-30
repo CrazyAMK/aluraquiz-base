@@ -1,9 +1,56 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import QuizScreen from '../../src/screens/Quiz'
 
-export default function QuizDaGaleraPage(){
+export default function QuizDaGaleraPage({ dbExterno }){
     return (
         <div>
-            Desafio da proxima aula junto com as animações
+
+            <ThemeProvider theme={dbExterno.theme}>
+                <QuizScreen externalDb={dbExterno} />
+            </ThemeProvider>
+            {/* <pre style={{color: 'black'}}>
+                {JSON.stringify(dbExterno.questions, null, 4)}
+            </pre> */}
+
         </div>
+
+
     )
+}
+
+export async function getServerSideProps(context){
+
+    const [projectName, githubUser] = context.query.id.split('___');
+    // console.log("infos que o Next da para nós", context.query.id);
+
+    const refQuiz = `${projectName}.${githubUser}`
+
+    if(!githubUser){
+        refQuiz = `${projectName}`;
+    }
+
+    try{
+    const dbExterno = await fetch(`https://${refQuiz}.vercel.app/api/db`)
+        .then((respostaDoServer) => {
+            if(respostaDoServer.ok){
+                return respostaDoServer.json();
+            }
+            throw new Error('Falha em pegar os dados');
+        })
+        .then((respostaConvertidaEmObjeto) =>{
+           return respostaConvertidaEmObjeto
+        })
+        .catch((error) => {
+            console.error(error);
+        })
+
+    return {
+        props: {
+            dbExterno,
+        },
+    };
+    }catch(error){
+        throw new Error(error);
+    }
 }

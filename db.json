@@ -6,7 +6,7 @@
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+        "image": "https://miro.medium.com/max/2400/1*rpHtt5VicGT3T-mVJJ2jFw.gif",
         "title": "Por que devemos usar o React?",
         "description": "",
         "answer": 1,
@@ -18,7 +18,7 @@
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "image": "https://www.carlrippon.com/ffb1c47f0e122c89c1f57f2226878cfd/JS-GoToDefinition.gif",
         "title": "Quais são os estágios da vida útil de um componente?",
         "description": "",
         "answer": 0,
@@ -30,7 +30,7 @@
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "image": "https://www.traderwave.com/wp-content/uploads/2018/02/Internet-browsers.gif",
         "title": "Os navegadores web podem ler JSX?",
         "description": "",
         "answer": 1,
@@ -41,7 +41,7 @@
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJmxPXKTa0gBClU7NIxnzIUYIw3BW4dxAoiw&usqp=CAU",
         "title": "Como o React JS faz o uso de 'keys'?",
         "description": "",
         "answer": 3,

@@ -1,13 +1,13 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import QuizScreen from '../../src/screens/Quiz'
+import QuizExternal from '../../src/screens/QuizExternal'
 
 export default function QuizDaGaleraPage({ dbExterno }){
     return (
         <div>
 
             <ThemeProvider theme={dbExterno.theme}>
-                <QuizScreen externalDb={dbExterno} />
+                <QuizExternal externalDb={dbExterno} />
             </ThemeProvider>
             {/* <pre style={{color: 'black'}}>
                 {JSON.stringify(dbExterno.questions, null, 4)}

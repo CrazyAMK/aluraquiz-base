@@ -142,7 +142,7 @@ const screenStates = {
 }
 
 
-export default function QuizPage({externalDb}){
+export default function Quiz({externalDb}){
     console.log(externalDb)
     const db = externalDb;
     const [screenState, setScreenState] = useState(screenStates.LOADING);

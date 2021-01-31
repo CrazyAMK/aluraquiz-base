@@ -43,7 +43,7 @@ function ResultWidget({results}){
                 { acertos < 3 && <img style={{width: "100%"}} src="https://dz2cdn1.dzone.com/storage/temp/13990138-code-21.gif" />}
 
                 <p>
-                    Olá {player}, você acertou {acertos} pergunta{(acertos < 1 || acertos === 0) ? "s" : ""}
+                    Olá {player}, você acertou {acertos} pergunta{(acertos > 1 || acertos === 0) ? "" : "s"}
                 </p>
                 <ul>
                     { results.map((result, index) => (

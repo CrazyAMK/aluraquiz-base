@@ -36,10 +36,14 @@ function ResultWidget({results}){
 
             <Widget.Content>
 
-                { acertos === results.length ? <img src="https://i.pinimg.com/originals/b2/3a/90/b23a908ae01021bc1064937bad061b11.gif" /> : ""}
+                { acertos === results.length && <img style={{width: "100%"}} src="https://i.pinimg.com/originals/b2/3a/90/b23a908ae01021bc1064937bad061b11.gif" />}
+
+                { acertos >= 3 && acertos < results.length && <img style={{width: "100%"}} src="https://i0.wp.com/www.almeidatecno.com/wp-content/uploads/2019/03/Feliz-com-o-PC-1.gif?resize=400%2C300" />}
+
+                { acertos < 3 && <img style={{width: "100%"}} src="https://dz2cdn1.dzone.com/storage/temp/13990138-code-21.gif" />}
 
                 <p>
-                    Olá {player}, você acertou {acertos} perguntas
+                    Olá {player}, você acertou {acertos} pergunta{(acertos > 1 || acertos === 0) ? "s" : ""}
                 </p>
                 <ul>
                     { results.map((result, index) => (

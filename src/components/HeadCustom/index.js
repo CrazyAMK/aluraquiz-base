@@ -5,7 +5,7 @@ function IndexPage(){
     return(
         <div>
             <Head>
-                <title>Imersão Alura - Quiz Base</title>
+                <title>Imersão Alura - {db.title}</title>
                 <link rel="icon" type="image/png" href={db.favIcon} />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta property="og:title" content="Imersão Alura - Quiz Base" key="title" />
